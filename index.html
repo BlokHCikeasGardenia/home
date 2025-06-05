@@ -14,15 +14,25 @@
     .links a:hover { background: #bbdefb; }
     .info, .footer { background: #f1f8e9; border-radius: 8px; padding: 18px 20px; margin-bottom: 18px; }
     .payinfo { background: #fffde7; border-radius: 8px; padding: 18px 20px; margin-bottom: 16px; }
-    .qris-img { display: block; margin: 16px auto 4px; max-width: 220px; }
+    .qris-img { display: block; margin: 16px auto 4px; max-width: 220px; cursor:pointer; border:2px solid #eee; border-radius:8px; transition:box-shadow .2s; }
+    .qris-img:hover { box-shadow:0 2px 18px #b3c6fc; }
     .footer { background: #e3f2fd; font-size: 0.97em; }
+    /* Modal Styles */
+    #qrisModal {
+      display:none; position:fixed; z-index:1000; left:0; top:0; width:100vw; height:100vh;
+      background:rgba(0,0,0,0.7); align-items:center; justify-content:center;
+    }
+    #qrisModal img {
+      max-width:90vw; max-height:90vh; border-radius:12px; box-shadow:0 2px 24px #000;
+      background:#fff;
+    }
     @media(max-width:700px){ .container{padding:16px 4vw;} }
   </style>
 </head>
 <body>
   <div class="container">
-    <!-- Logo (ganti src bila perlu) -->
-    <img src="assets/Logo.png" alt="Logo Blok H" class="logo">
+    <!-- Logo -->
+    <img src="logo.png" alt="Logo Blok H" class="logo">
 
     <!-- Kata Pengantar -->
     <h1>Selamat Datang di<br>Sistem Informasi Keuangan Blok H</h1>
@@ -61,9 +71,9 @@
         </li>
         <li style="margin-top:10px;">
           <b>📱 Pembayaran via QRIS</b><br>
-          (Scan QR di bawah)
-          <!-- Gambar QRIS -->
-          <img src="assets/QRIS.png" alt="QRIS Blok H" class="qris-img">
+          (Scan QR di bawah, klik untuk perbesar)
+          <!-- Gambar QRIS dengan Popup -->
+          <img src="qris.png" alt="QRIS Blok H" class="qris-img" id="qrisThumb">
         </li>
       </ul>
     </div>
@@ -75,5 +85,16 @@
       <p>Jika terdapat ketidaksesuaian data, mohon segera menghubungi pengurus RT untuk ditindaklanjuti.</p>
     </div>
   </div>
+
+  <!-- Popup Modal QRIS -->
+  <div id="qrisModal">
+    <img src="qris.png" alt="QRIS Blok H">
+  </div>
+  <script>
+    const modal = document.getElementById('qrisModal');
+    const thumb = document.getElementById('qrisThumb');
+    thumb.onclick = () => { modal.style.display = 'flex'; };
+    modal.onclick = () => { modal.style.display = 'none'; };
+  </script>
 </body>
 </html>
