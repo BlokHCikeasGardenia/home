@@ -18,14 +18,22 @@
     .qris-img { display: block; margin: 16px auto 4px; max-width: 220px; cursor:pointer; border:2px solid #eee; border-radius:8px; transition:box-shadow .2s; }
     .qris-img:hover { box-shadow:0 2px 18px #b3c6fc; }
     .footer { background: #e3f2fd; font-size: 0.97em; }
-    #qrisModal {
-      display:none; position:fixed; z-index:1000; left:0; top:0; width:100vw; height:100vh;
-      background:rgba(0,0,0,0.7); align-items:center; justify-content:center;
+    .tata-tertib {
+      background: #fff8e1;
+      border-radius: 8px;
+      padding: 18px 20px;
+      margin-top: 20px;
+      font-size: 0.97em;
     }
-    #qrisModal img {
-      max-width:90vw; max-height:90vh; border-radius:12px; box-shadow:0 2px 24px #000;
-      background:#fff;
+    .tata-tertib h3 {
+      text-align: center;
+      color: #d17b00;
+      margin-top: 0;
     }
+    .tata-tertib ol { padding-left: 22px; }
+    .tata-tertib ul { padding-left: 18px; }
+    .tata-tertib li { margin-bottom: 8px; }
+    .tata-tertib .sublist { margin-top: 3px; margin-bottom: 10px; }
     @media(max-width:700px){ .container{padding:16px 4vw;} }
   </style>
 </head>
@@ -37,7 +45,7 @@
     <!-- Kata Pengantar (judul di-center) -->
     <h1 class="judul">Selamat Datang di<br>Sistem Informasi Keuangan Blok H</h1>
     <div class="info">
-      <p>Halo Assalamualaikum warga Blok H....! 👋<br>
+      <p>Halo warga Blok H! 👋<br>
       Website ini dibuat untuk memberikan informasi keuangan yang transparan, akurat, dan mudah diakses oleh seluruh warga.<br>
       Di sini, kamu bisa melihat data pemasukan, pengeluaran, saldo, serta laporan-laporan rutin yang selalu diperbarui.</p>
       <p>Kami berharap sistem ini bisa jadi jembatan komunikasi dan kepercayaan dalam pengelolaan dana lingkungan kita.<br>
@@ -56,8 +64,6 @@
       <a href="https://blokhcikeasgardenia.github.io/datalainnya/">Data Lainnya</a>
       <a href="https://blokhcikeasgardenia.github.io/pemasukan/">Pemasukan</a>
       <a href="https://blokhcikeasgardenia.github.io/pengeluaran/">Pengeluaran</a>
-      <a href="https://blokhcikeasgardenia.github.io/laporankas/">Laporan Kas</a>
-      <a href="https://blokhcikeasgardenia.github.io/pengumuman/">Pengumuman</a>
     </div>
 
     <!-- Informasi Utama Pembayaran -->
@@ -80,11 +86,59 @@
       </ul>
     </div>
 
-    <!-- Catatan Kaki -->
+    <!-- Catatan Kaki & Tata Tertib -->
     <div class="footer">
       <b>📝 Catatan Penting</b>
       <p>Warga yang melakukan pembayaran secara online harap menginformasikan kepada Ketua Lorong masing-masing, dengan melampirkan screenshot atau bukti transfer lainnya agar dapat tercatat dengan benar.</p>
       <p>Jika terdapat ketidaksesuaian data, mohon segera menghubungi pengurus RT untuk ditindaklanjuti.</p>
+      <!-- Tata Tertib -->
+      <div class="tata-tertib">
+        <h3>TATA TERTIB PEMBAYARAN IPL DAN AIR</h3>
+        <ol>
+          <li>
+            <b>Kewajiban Pembayaran</b>
+            <ul class="sublist">
+              <li>Setiap warga wajib melakukan pembayaran Iuran Pengelolaan Lingkungan (IPL) setiap bulan sesuai periode waktu yang telah ditentukan.</li>
+              <li>Pembayaran tagihan air dilakukan berdasarkan jumlah pemakaian air bersih dan wajib dibayarkan tepat waktu sesuai ketentuan yang berlaku.</li>
+              <li>Periode pembayaran dimulai dari tgl 25 bulan berjalan s/d tgl 5 bulan berikutnya, pembayaran yang melewati tenggat waktu tersebut akan diinput ke sistem pada periode berikutnya.</li>
+            </ul>
+          </li>
+          <li>
+            <b>Tindakan Penertiban Bila Terjadi Keterlambatan</b>
+            <ul class="sublist">
+              <li>
+                <b>A. Iuran Pengelolaan Lingkungan (IPL):</b>
+                <ul>
+                  <li>Apabila terjadi keterlambatan pembayaran IPL selama 3 (tiga) bulan berturut-turut, maka:</li>
+                  <li>Layanan pengangkutan sampah dari rumah yang bersangkutan akan ditunda sementara hingga kewajiban diselesaikan.</li>
+                  <li>Pelayanan administratif dari RT/RW, seperti pengajuan surat pengantar, tidak dapat diproses sementara waktu.</li>
+                  <li>Bantuan dana sosial dari lingkungan akan dinyatakan gugur.</li>
+                </ul>
+              </li>
+              <li>
+                <b>B. Tagihan Air:</b>
+                <ul>
+                  <li>Apabila tunggakan pembayaran tagihan air telah mencapai pemakaian kumulatif sebesar 125 meter kubik atau nilai setara Rp500.000, maka:</li>
+                  <li>Pengurus berhak melakukan penutupan sementara aliran air ke rumah yang bersangkutan.</li>
+                  <li>Pemulihan layanan akan dilakukan setelah seluruh kewajiban diselesaikan.</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <b>Solusi dan Komunikasi</b>
+            <ul class="sublist">
+              <li>Jika warga mengalami kendala dalam memenuhi kewajiban pembayaran, diharapkan segera berkomunikasi dengan pengurus lingkungan untuk mencari solusi bersama secara musyawarah dan kekeluargaan.</li>
+            </ul>
+          </li>
+          <li>
+            <b>Penutup</b>
+            <ul class="sublist">
+              <li>Tata tertib ini berlaku untuk seluruh warga sebagai bentuk komitmen bersama menjaga keteraturan dan keberlangsungan layanan lingkungan. Diharapkan partisipasi aktif seluruh warga untuk menjalankan kewajiban secara tertib dan bertanggung jawab.</li>
+            </ul>
+          </li>
+        </ol>
+      </div>
     </div>
   </div>
 
