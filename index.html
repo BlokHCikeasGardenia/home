@@ -41,7 +41,7 @@
     .tata-tertib li { margin-bottom: 8px; }
     .tata-tertib .sublist { margin-top: 3px; margin-bottom: 10px; }
 
-    /* Modal popup QRIS fix */
+    /* Modal popup QRIS */
     #qrisModal {
       display: none;
       position: fixed;
@@ -59,10 +59,55 @@
       box-shadow: 0 2px 24px #000;
       background: #fff;
     }
-    @media(max-width:700px){ .container{padding:16px 4vw;} }
+
+    /* Modal popup umum (untuk gambar popup ketika halaman dibuka) */
+    #popupModal {
+      display: flex;
+      position: fixed;
+      z-index: 2000;
+      left: 0; top: 0;
+      width: 100vw; height: 100vh;
+      background: rgba(0,0,0,0.7);
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      transition: opacity .2s;
+    }
+    #popupModal.hide {
+      display: none;
+    }
+    #popupModal img {
+      max-width: 92vw;
+      max-height: 70vh;
+      border-radius: 10px;
+      box-shadow: 0 2px 24px #000;
+      background: #fff;
+      margin-bottom: 16px;
+    }
+    #popupModal .popup-info {
+      color: #fff;
+      font-size: 1.1em;
+      background: rgba(0,0,0,0.5);
+      padding: 8px 18px;
+      border-radius: 8px;
+      margin-bottom: 15px;
+      text-align: center;
+      font-weight: bold;
+      letter-spacing: .5px;
+    }
+    @media(max-width:700px){
+      .container{padding:16px 4vw;}
+      #popupModal img { max-width: 98vw; max-height: 55vh; }
+    }
   </style>
 </head>
 <body>
+  <!-- Popup Modal Gambar (muncul otomatis di awal) -->
+  <div id="popupModal">
+    <img src="pamfletipl.jpeg" alt="Pengumuman" id="popupImg">
+    <div class="popup-info">Klik dimana saja untuk menutup</div>
+  </div>
+
   <div class="container">
     <!-- Logo -->
     <img src="logo.png" alt="Logo Blok H" class="logo">
@@ -89,6 +134,7 @@
       <a href="https://blokhcikeasgardenia.github.io/datalainnya/">Data Lainnya</a>
       <a href="https://blokhcikeasgardenia.github.io/pemasukan/">Pemasukan</a>
       <a href="https://blokhcikeasgardenia.github.io/pengeluaran/">Pengeluaran</a>
+      <a href="https://blokhcikeasgardenia.github.io/pengumuman/">Pengumuman</a>
     </div>
 
     <!-- Informasi Utama Pembayaran -->
@@ -173,10 +219,18 @@
     <img src="qris.png" alt="QRIS Blok H">
   </div>
   <script>
+    // Modal QRIS (klik gambar QRIS)
     const modal = document.getElementById('qrisModal');
     const thumb = document.getElementById('qrisThumb');
     thumb.onclick = () => { modal.style.display = 'flex'; };
     modal.onclick = () => { modal.style.display = 'none'; };
+
+    // Modal popup gambar setiap buka halaman (popupModal)
+    const popupModal = document.getElementById('popupModal');
+    popupModal.onclick = () => {
+      popupModal.classList.add('hide');
+    };
+    // Modal muncul otomatis, tidak perlu kode tambahan
   </script>
 </body>
 </html>
