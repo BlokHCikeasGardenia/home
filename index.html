@@ -40,6 +40,25 @@
     .tata-tertib ul { padding-left: 18px; }
     .tata-tertib li { margin-bottom: 8px; }
     .tata-tertib .sublist { margin-top: 3px; margin-bottom: 10px; }
+
+    /* Modal popup QRIS fix */
+    #qrisModal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0; top: 0;
+      width: 100vw; height: 100vh;
+      background: rgba(0,0,0,0.7);
+      align-items: center;
+      justify-content: center;
+    }
+    #qrisModal img {
+      max-width: 90vw;
+      max-height: 90vh;
+      border-radius: 12px;
+      box-shadow: 0 2px 24px #000;
+      background: #fff;
+    }
     @media(max-width:700px){ .container{padding:16px 4vw;} }
   </style>
 </head>
@@ -149,7 +168,7 @@
     </div>
   </div>
 
-  <!-- Popup Modal QRIS (sekarang di luar .footer dan .container) -->
+  <!-- Popup Modal QRIS (di luar .container dan .footer)-->
   <div id="qrisModal">
     <img src="qris.png" alt="QRIS Blok H">
   </div>
